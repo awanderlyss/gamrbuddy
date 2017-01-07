@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :authenticate_user!, only: [:add_game, :remove_game]
+  before_action :authenticate_user!, only: [:add_ownership, :remove_ownership]
   before_action :set_game, only: [:show]
 
   # GET /games
@@ -11,17 +11,23 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @game = Game.find(params[:id])
   end
 
-  def add_game
+  def add_ownership
     @game = Game.find(params[:id])
     @game.ownerships.create(user: current_user)
     redirect_to :back
   end
 
-  def remove_game
+  def remove_ownership
     Ownership.where(user: current_user).destroy_all
     redirect_to :back
+  end
+
+  def ownerships
+    @game = Game.find(params[:id])
+    @ownerships = Ownership.where(game: @game)
   end
 
   private

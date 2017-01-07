@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :ownerships
-  has_many :games, through: :ownerships       
+  has_many :games, through: :ownerships, dependent: :destroy     
 end

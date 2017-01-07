@@ -1,0 +1,10 @@
+<h1>Library</h1>
+<div class="games">
+  <% @ownerships.each do |ownership| %>
+    <div class="game">
+      <%= link_to ownership.game, class: "poster" do %>
+        <%= image_tag ownership.game.img_url %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

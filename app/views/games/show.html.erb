@@ -1,29 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="game-card">
 
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
-</p>
+  <%= image_tag @game.img_url, class: "poster" %>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @game.genre %>
-</p>
+  <div class="game-info">
+    <h2><%= @game.title %>(<%= @game.release_date.strftime("%Y") %>)</h2>
+    <p><%= @game.developer %></p>
+    <p><%= @game.genre %></p>
+    <% if @game.users.include? current_user %>
+        <%= link_to "Remove Game".html_safe, remove_ownership_game_path(@game), method: :delete, class: "fav" %>
+      <% else %>
+        <%= link_to "Add Game".html_safe, add_ownership_game_path(@game), method: :post, class: "no-fav" %>
+      <% end %>
+  </div>
 
-<p>
-  <strong>Developer:</strong>
-  <%= @game.developer %>
-</p>
-
-<p>
-  <strong>Release date:</strong>
-  <%= @game.release_date %>
-</p>
-
-<p>
-  <strong>Img url:</strong>
-  <%= @game.img_url %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+</div>
