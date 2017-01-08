@@ -18,7 +18,7 @@
       <h3>GAME GENRES</h3>
       <p>
         <% genres = [] %>
-        <% @games.each do |game| %>
+        <% Game.all.each do |game| %>
           <% game.genre.split(",").map(&:strip).each do |genre| %>
             <% genres.push(genre.capitalize) %>
           <% end %>

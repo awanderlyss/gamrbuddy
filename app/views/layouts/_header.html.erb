@@ -5,13 +5,5 @@
   <h1><b><i class="fi-torsos-all"></i> GamrBuddy</b></h1>
   <div class="w3-section w3-bottombar w3-padding-16">
     <%= link_to "Games", games_path, class: "w3-btn" %>
-    <% if !user_signed_in? %>
-      <%= link_to new_user_registration_path, class: "w3-btn" do %>
-        <i class="fa fi-pencil fa-fw w3-margin-right"></i>SIGN UP
-      <% end %>
-      <%= link_to new_user_session_path, class: "w3-btn" do %>
-        <i class="fa fi-power fa-fw w3-margin-right"></i>LOGIN
-      <% end %>
-    <% end %>
   </div>
 </header>

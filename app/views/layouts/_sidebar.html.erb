@@ -1,5 +1,18 @@
 
-<nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidenav"><br>
+<nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidenav">
+  <br>
+  <!-- Not signed in -->
+  <div class="w3-container">
+    <% if !user_signed_in? %>
+      <%= link_to new_user_registration_path do %>
+        <i class="fa fi-pencil fa-fw w3-margin-right"></i>SIGN UP
+      <% end %><br>
+      <%= link_to new_user_session_path do %>
+        <i class="fa fi-power fa-fw w3-margin-right"></i>LOGIN
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Signed in -->
   <% if user_signed_in? %>
     <div class="w3-container">
 

@@ -9,9 +9,9 @@
      <p><%= @game.developer %></p>
      <p><%= @game.genre %></p>
      <% if @game.users.include? current_user %>
-         <%= link_to " Game".html_safe, remove_ownership_game_path(@game), method: :delete, class: "fav fi-minus" %>
+         <%= link_to " Game".html_safe, remove_ownership_game_path(@game), method: :delete, class: "fi-minus" %>
        <% else %>
-         <%= link_to " Game".html_safe, add_ownership_game_path(@game), method: :post, class: "no-fav fi-plus" %>
+         <%= link_to " Game".html_safe, add_ownership_game_path(@game), method: :post, class: "fi-plus" %>
        <% end %>
    </div>
  </div>
