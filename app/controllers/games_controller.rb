@@ -17,13 +17,14 @@ class GamesController < ApplicationController
   def add_ownership
     @game = Game.find(params[:id])
     @game.ownerships.create(user: current_user)
-    redirect_to :back
+    redirect_back(fallback_location: game)
   end
 
   def remove_ownership
     @game = Game.find(params[:id])
     Ownership.where(user: current_user, game: @game).destroy_all
-    redirect_back fallback_location: proc { ownerships_user_path(@current_user) }
+
+    redirect_back(fallback_location: game)
   end
 
   def ownerships
