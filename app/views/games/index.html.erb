@@ -7,5 +7,12 @@
       <% end %>
     </div>
   <% end %>
-  <%= will_paginate @games %>
+  
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-pagination">
+      <%= will_paginate @games, :container => false %>
+    </div>
+  </div>
+
 </div>
