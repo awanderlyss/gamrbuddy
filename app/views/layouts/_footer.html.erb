@@ -15,13 +15,17 @@
 
 
     <div class="w3-col m6">
-      <h3>POPULAR TAGS</h3>
+      <h3>GAME GENRES</h3>
       <p>
-        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
+        <% genres = [] %>
+        <% @games.each do |game| %>
+          <% game.genre.split(",").map(&:strip).each do |genre| %>
+            <% genres.push(genre.capitalize) %>
+          <% end %>
+        <% end %>
+        <% genres.uniq.each do |genre| %>
+          <span class="w3-tag w3-black w3-margin-bottom"><%= genre %></span>
+        <% end %>
       </p>
     </div>
 
