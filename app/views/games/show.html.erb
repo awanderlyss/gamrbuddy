@@ -1,16 +1,17 @@
-<div class="game-card">
 
-  <%= image_tag @game.img_url, class: "poster" %>
-
-  <div class="game-info">
-    <h2><%= @game.title %>(<%= @game.release_date.strftime("%Y") %>)</h2>
-    <p><%= @game.developer %></p>
-    <p><%= @game.genre %></p>
-    <% if @game.users.include? current_user %>
-        <%= link_to " Game".html_safe, remove_ownership_game_path(@game), method: :delete, class: "fav fi-minus" %>
-      <% else %>
-        <%= link_to " Game".html_safe, add_ownership_game_path(@game), method: :post, class: "no-fav fi-plus" %>
-      <% end %>
-  </div>
-
-</div>
+<!-- Show Game Info-->
+ <div class="w3-row-padding w3-padding-16" id="about">
+   <div class="w3-col m6 w3-center">
+     <%= image_tag @game.img_url, class: ""%>
+   </div>
+   <div class="w3-col m6">
+     <h2><%= @game.title %>(<%= @game.release_date.strftime("%Y") %>)</h2>
+     <p><%= @game.developer %></p>
+     <p><%= @game.genre %></p>
+     <% if @game.users.include? current_user %>
+         <%= link_to " Game".html_safe, remove_ownership_game_path(@game), method: :delete, class: "fav fi-minus" %>
+       <% else %>
+         <%= link_to " Game".html_safe, add_ownership_game_path(@game), method: :post, class: "no-fav fi-plus" %>
+       <% end %>
+   </div>
+ </div>

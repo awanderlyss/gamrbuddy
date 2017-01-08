@@ -6,6 +6,9 @@
       <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding" title="close menu">
         <i class="fa fa-remove"></i>
       </a>
+      <%= link_to destroy_user_session_path, method: :delete, class: "w3-padding w3-right" do %>
+        <i class="fa fi-power fa-fw w3-margin-right"></i>LOGOUT
+      <% end %>
       <img src="/w3images/avatar_g2.jpg" style="width:45%;" class="w3-round"><br><br>
       <h4 class="w3-padding-0"><b><%= current_user.email %></b></h4>
       <p class="w3-text-grey">Desc</p>
@@ -16,9 +19,6 @@
     <% end %>
     <%= link_to edit_user_registration_path, class: "w3-padding", onclick: "w3_close()" do %>
       <i class="fa fa-user fa-fw w3-margin-right"></i>EDIT PROFILE
-    <% end %>
-    <%= link_to destroy_user_session_path, method: :delete, class: "w3-padding" do %>
-      <i class="fa fi-power fa-fw w3-margin-right"></i>LOGOUT
     <% end %>
   <% end %>
 </nav>
