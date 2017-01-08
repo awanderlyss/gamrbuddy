@@ -1,9 +1,10 @@
-<h1>Library</h1>
-<div class="games-grid">
+<!-- Game Grid-->
+<div class="w3-row-padding">
+  <h2>LIBRARY</h2>
   <% @ownerships.each do |ownership| %>
-    <div class="game">
-      <%= link_to ownership.game, class: "poster" do %>
-        <%= image_tag ownership.game.img_url %>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <%= link_to ownership.game do %>
+        <%= image_tag ownership.game.img_url, class: "w3-hover-opacity game" %>
       <% end %>
     </div>
   <% end %>

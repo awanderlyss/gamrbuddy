@@ -20,7 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+# Use Paginate for pagination library
+gem 'will_paginate'
 # Use Sprig for adding seed/sample data
 gem 'sprig', '~> 0.1'
 # Use Devise for user authenication

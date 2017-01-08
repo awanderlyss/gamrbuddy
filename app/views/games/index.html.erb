@@ -1,11 +1,11 @@
-<h2>Games</h2>
-
-<div class="games-grid">
+<!-- Game Grid-->
+<div class="w3-row-padding">
   <% @games.each do |game| %>
-    <div class="game">
-      <%= link_to game, class: "poster" do %>
-        <%= image_tag game.img_url %>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <%= link_to game do %>
+        <%= image_tag game.img_url, class: "w3-hover-opacity game" %>
       <% end %>
     </div>
   <% end %>
+  <%= will_paginate @games %>
 </div>
