@@ -9,28 +9,7 @@
   </head>
 
   <body>
-    <h1>
-      <i class="fi-torsos-all"></i> GamrBuddy
-    </h1>
-    <nav>
-      <%= link_to "Games", games_path %>
-
-      <% if user_signed_in? %>
-        <%= link_to " My Library", ownerships_user_path(current_user), :class => 'fi-folder' %>
-      <% end %>
-
-
-      <div class="user-info">
-        <% if user_signed_in? %>
-          Welcome, <strong><%= current_user.email %></strong>!
-          <%= link_to ' Edit profile', edit_user_registration_path, :class => 'navbar-link fi-torso' %> |
-          <%= link_to " Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link fi-power' %>
-        <% else %>
-          <%= link_to " Sign up", new_user_registration_path, :class => 'navbar-link fi-pencil'  %> |
-          <%= link_to " Login", new_user_session_path, :class => 'navbar-link fi-power'  %>
-        <% end %>
-      </div>
-    </nav>
+    <%= render "layouts/header" %>
 
     <%= render "layouts/alerts" %>
 
