@@ -1,15 +1,17 @@
-<h1>
-  <i class="fi-torsos-all"></i> GamrBuddy
-</h1>
-<nav>
-  <%= link_to "Games", games_path %>
 
-  <% if user_signed_in? %>
-
-  <% end %>
-
-  <div class="user-info">
-      <%= link_to " Sign up", new_user_registration_path, :class => 'navbar-link fi-pencil'  %> |
-      <%= link_to " Login", new_user_session_path, :class => 'navbar-link fi-power'  %>
+<header class="w3-container" id="portfolio">
+  <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+  <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+  <h1><b><i class="fi-torsos-all"></i> GamrBuddy</b></h1>
+  <div class="w3-section w3-bottombar w3-padding-16">
+    <%= link_to "Games", games_path, class: "w3-btn" %>
+    <% if !user_signed_in? %>
+      <%= link_to new_user_registration_path, class: "w3-btn" do %>
+        <i class="fa fi-pencil fa-fw w3-margin-right"></i>SIGN UP
+      <% end %>
+      <%= link_to new_user_session_path, class: "w3-btn" do %>
+        <i class="fa fi-power fa-fw w3-margin-right"></i>LOGIN
+      <% end %>
+    <% end %>
   </div>
-</nav>
+</header>

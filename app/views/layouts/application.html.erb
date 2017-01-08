@@ -11,15 +11,19 @@
   </head>
 
   <body class="w3-light-grey w3-content" style="max-width:1600px">
+    <!-- Sidenav/menu -->
+    <%= render "layouts/sidebar" %>
 
-
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+      <!-- Header -->
       <%= render "layouts/header" %>
+      <%= render "layouts/alerts" %>
 
-      <%= render "layouts/sidebar" %>
+      <%= yield %>
+    </div>
 
-    <%= render "layouts/alerts" %>
 
-    <%= yield %>
     <%= render "layouts/footer" %>
   </body>
 </html>
