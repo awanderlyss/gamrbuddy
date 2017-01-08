@@ -3,17 +3,23 @@
   <head>
     <title>Gamrbuddy</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render "layouts/header" %>
+  <body class="w3-light-grey w3-content" style="max-width:1600px">
+
+
+      <%= render "layouts/header" %>
+
+      <%= render "layouts/sidebar" %>
 
     <%= render "layouts/alerts" %>
 
     <%= yield %>
-
+    <%= render "layouts/footer" %>
   </body>
 </html>
