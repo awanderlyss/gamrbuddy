@@ -20,7 +20,13 @@
       <%= render "layouts/header" %>
       <%= render "layouts/alerts" %>
 
-      <%= yield %>
+      <% if @games.present? %>
+        <%= yield %>
+      <% else %>
+        <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+      <% end %>
+
+      <!-- Footer -->
       <%= render "layouts/footer" %>
     </div>
   </body>

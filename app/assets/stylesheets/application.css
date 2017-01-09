@@ -13,6 +13,20 @@
  *= require_tree .
  *= require_self
  */
- 
+
  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
  .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+  /********************* HEADER SECTION ********************/
+
+#search-form {
+  display: inline;
+}
+ #search-form input[type=text] {
+    width: 25%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 5px 45px 5px 25px;
+}

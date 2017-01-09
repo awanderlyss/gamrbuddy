@@ -6,6 +6,11 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.paginate(:page => params[:page], :per_page => 6)
+    if params[:search]
+      @games = Game.search(params[:search].capitalize).paginate(:page => params[:page], :per_page => 6)
+    else
+      @games = Game.paginate(:page => params[:page], :per_page => 6)
+    end
   end
 
   # GET /games/1
