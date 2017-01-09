@@ -1,0 +1,6 @@
+
+<% if @games.present? || !user_signed_in?%>
+  <%= yield %>
+<% else%>
+  <p>There are no games containing the term(s) <%= params[:search] %>.</p>
+<% end %>
