@@ -19,6 +19,36 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
+  # new
+  def new
+    @game = Game.new
+  end
+
+  # create
+  def create
+    @game = Game.create(game_params)
+    redirect_to game_path(@game)
+  end
+
+  # edit
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  # update
+  def update
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+    redirect_to game_path(@game)
+  end
+
+  # destroy
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    redirect_to games_path
+  end
+
   def add_ownership
     @game = Game.find(params[:id])
     @game.ownerships.create(user: current_user)

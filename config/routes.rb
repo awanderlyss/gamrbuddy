@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   # Games Routes
 
-  resources :games, only: [:index, :show] do
+  resources :games do
     member do
       post 'add_ownership'
       delete 'remove_ownership'
