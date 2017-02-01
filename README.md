@@ -10,7 +10,7 @@ GamrBuddy was created so gamers have a gateway to find other gamers who play the
 
 ## Planning
 
-This projects planning was tracked through [Projects][projects-link]. User stories and future features can also be found on the Projects page. An ERD was created and is located in the `planning` directory. Wireframing was completed using [w3-templates][w3-templates] as a guideline. 
+This projects planning was tracked through [Projects][projects-link]. User stories and future features can also be found on the Projects page. An ERD was created and is located in the `planning` directory. Wireframing was completed using [w3-templates][w3-templates] as a guideline.
 
 ## Development / Installation setup
 
@@ -65,7 +65,7 @@ $ bundle install
 # start rails server
 $ rails s
 ```
-If there are no errors in the terminal, you can now navigate in our browser to <http://localhost:3000> to interact with the app.
+If there are no errors in the terminal, you can now navigate in your browser to <http://localhost:3000> to interact with the app.
 
 ## Contributors
 
