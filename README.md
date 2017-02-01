@@ -6,11 +6,11 @@ app is deployed @ https://gamrbuddy.herokuapp.com/
 
 ## Motivation
 
-Empire Co. was created because of shared our interest in developing the necassary skills required to create a modern web store. These skills can potentially open us to strategic roles with client retailers both large and independent.
+GamrBuddy was created so gamers have a gateway to find other gamers who play the same games as them.
 
 ## Planning
 
-
+This projects planning was tracked through [Projects][projects-link].
 
 ## Development / Installation setup
 
@@ -27,14 +27,14 @@ Some dependencies used in the api and what they are being used for in the app.
     It was used in the project to create pages that will display a total of six games on them.
   ```
 </details>
-
 <details>
   <summary>
     [sprig][gem-sprig]
   </summary>
   <br>
   ```
-  sprig is used to add seed/sample data to your Rails applications. It was used to simplify the the process for creating all the games and seeding the database.
+  sprig is used to add seed/sample data to your Rails applications.
+  It was used to simplify the the process for creating all the games and seeding the database.
   ```
 </details>
 <details>
@@ -110,29 +110,6 @@ Feel free to refactor, update, or add new features. Have any questions, ask one 
 [gem-sprig]: https://github.com/vigetlabs/sprig
 [gem-will-paginate]: https://github.com/mislav/will_paginate
 [github-logo]: http://cdn.shopify.com/s/files/1/0051/4802/t/72/assets/favicon.ico?1744047789295863037
+[projects-link]: https://github.com/awanderlyss/gamrbuddy/projects/1
 [rails-ref]: http://rubyonrails.org/
 [ruby-guide]: http://railsapps.github.io/installrubyonrails-mac.html
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
