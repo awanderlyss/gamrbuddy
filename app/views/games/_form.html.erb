@@ -1,0 +1,26 @@
+<%= form_for(@game) do |f| %>
+  <div class="w3-group">
+    <%= f.text_field :title, class: "w3-input" %>
+    <%= f.label :title, class: "w3-label w3-validate" %>
+  </div>
+  <div class="w3-group">
+    <%= f.text_field :genre, class: "w3-input"%>
+    <%= f.label :genre, class: "w3-label w3-validate" %>
+  </div>
+  <div class="w3-group">
+    <%= f.text_field :developer, class: "w3-input"%>
+    <%= f.label :developer, class: "w3-label w3-validate" %>
+  </div>
+  <div class="w3-group">
+    <%= f.text_field :release_date, class: "w3-input"%>
+    <%= f.label :release_date, class: "w3-label w3-validate" %>
+  </div>
+  <div class="w3-group">
+    <%= f.text_field :img_url, class: "w3-input"%>
+    <%= f.label :img_url, class: "w3-label w3-validate" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create Game", class: "w3-btn w3-right w3-margin-bottom" %>
+  </div>
+
+<% end %>
