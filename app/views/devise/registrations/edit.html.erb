@@ -1,7 +1,6 @@
-<div class="w3-row-padding">
-  <div class="w3-half">
-    <p><%= link_to "Back", :back, class: "w3-btn" %></p>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "w3-container w3-card-4 w3-white" }) do |f| %>
+<div class="w3-row-padding" style=" width: 50%; margin: 0 auto;">
+  <div class="w3-container w3-card-4 w3-white">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
       <%= devise_error_messages! %>
 
@@ -34,11 +33,13 @@
       </div>
 
       <div class="actions">
+        <%= link_to "Back", :back, class: "w3-btn" %>
         <%= f.submit "Update", class: "w3-btn w3-right"  %> <br />
       </div>
     <% end %>
 
-    <p>Unhappy? Cancel Account<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "w3-btn"  %></p>
-
+    <div class="w3-center">
+      <p>Unhappy? Cancel Account<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "w3-btn w3-red"  %></p>
+    </div>
   </div>
-</div>
+</div><br>
