@@ -6,6 +6,21 @@
       <%= devise_error_messages! %>
 
       <div class="w3-group">
+        <%= f.text_field :gamertag, autofocus: true, class: "w3-input" %>
+        <%= f.label :gamertag, class: "w3-label w3-validate" %>
+      </div>
+
+      <div class="w3-group">
+        <%= f.text_field :img_url, class: "w3-input" %>
+        <%= f.label :img_url, class: "w3-label w3-validate" %>
+      </div>
+
+      <div class="w3-group">
+        <%= f.text_field :desc, class: "w3-input" %>
+        <%= f.label :desc, class: "w3-label w3-validate" %>
+      </div>
+
+      <div class="w3-group">
         <%= f.email_field :email, autofocus: true, class: "w3-input" %>
         <%= f.label :email, class: "w3-label w3-validate" %>
       </div>
