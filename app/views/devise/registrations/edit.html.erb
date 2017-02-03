@@ -5,6 +5,24 @@
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
       <%= devise_error_messages! %>
 
+      <%= f.fields_for :profile do |profile_form| %>
+        <div class="w3-group">
+          <%= profile_form.text_field :gamertag, autofocus: true, class: "w3-input"  %>
+          <%= profile_form.label :gamertag, class: "w3-label w3-validate"  %>
+        </div>
+
+        <div class="w3-group">
+          <%= profile_form.text_field :img_url, class: "w3-input"  %>
+          <%= profile_form.label :img_url, class: "w3-label w3-validate"  %>
+        </div>
+
+        <div class="w3-group">
+          <%= profile_form.text_field :desc, class: "w3-input"  %>
+          <%= profile_form.label :desc, class: "w3-label w3-validate"  %>
+        </div>
+
+      <% end %>
+
       <div class="w3-group">
         <%= f.email_field :email, autofocus: true, class: "w3-input" %>
         <%= f.label :email, class: "w3-label w3-validate" %>
