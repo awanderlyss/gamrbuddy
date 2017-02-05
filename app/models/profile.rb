@@ -3,5 +3,5 @@ class Profile < ApplicationRecord
   belongs_to :user
 
   # Validations
-  validates :gamertag, presence: true
+  #validates :gamertag, presence: true
 end

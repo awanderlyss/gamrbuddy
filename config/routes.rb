@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   # Users Routes
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :users do
     member do
       get 'ownerships'
     end
     member do
-      resources :profiles
+      resource :profile
     end
   end
   # Games Routes
