@@ -58,7 +58,6 @@ class GamesController < ApplicationController
   def remove_ownership
     @game = Game.find(params[:id])
     Ownership.where(user: current_user, game: @game).destroy_all
-
     redirect_back(fallback_location: @game)
   end
 

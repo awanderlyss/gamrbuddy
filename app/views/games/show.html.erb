@@ -14,9 +14,11 @@
       <% else %>
       <%= link_to " Add Game".html_safe, add_ownership_game_path(@game), method: :post, class: "fi-plus w3-btn" %>
       <% end %>
-      <%= link_to "Edit", edit_game_path(@game), class: "w3-btn"  %>
-      <%= link_to "Remove", game_path(@game),
-        method: :delete, data: {confirm: "Remove Game?"}, class: "w3-btn"   %>
+      <% if user_signed_in? %>
+        <%= link_to "Edit", edit_game_path(@game), class: "w3-btn"  %>
+        <%= link_to "Remove", game_path(@game),
+          method: :delete, data: {confirm: "Remove Game?"}, class: "w3-btn"   %>
+      <% end %>
     </div>
   </div>
 </div>
