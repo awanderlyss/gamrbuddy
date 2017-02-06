@@ -1,6 +1,10 @@
-<h1>Editing Game</h1>
+<div class="w3-row-padding" style=" width: 50%; margin: 0 auto;">
+  <div class="w3-container w3-card-4 w3-white">
+    <h1>Editing Game</h1>
 
-<%= render 'form', game: @game %>
+    <%= render 'form', game: @game %>
 
-<%= link_to 'Show', @game %> |
-<%= link_to 'Back', games_path %>
+    <%= link_to "Back", :back, class: "w3-btn" %>
+    <%= link_to "Show", @game, class: "w3-btn" %>
+  </div>
+</div><br>

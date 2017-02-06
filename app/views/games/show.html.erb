@@ -1,17 +1,24 @@
 
 <!-- Show Game Info-->
- <div class="w3-row-padding w3-padding-16">
-   <div class="w3-col m6 w3-center">
-     <%= image_tag @game.img_url, class: ""%>
-   </div>
-   <div class="w3-col m6">
-     <h2><%= @game.title %>(<%= @game.release_date.strftime("%Y") %>)</h2>
-     <p>Developer:<%= @game.developer %></p>
-     <p>Genre:<%= @game.genre %></p>
-     <% if @game.users.include? current_user %>
-         <%= link_to " Game".html_safe, remove_ownership_game_path(@game), method: :delete, class: "fi-minus" %>
-       <% else %>
-         <%= link_to " Game".html_safe, add_ownership_game_path(@game), method: :post, class: "fi-plus" %>
-       <% end %>
-   </div>
- </div>
+<div class="w3-row-padding w3-padding-16">
+  <div class="w3-col m6 w3-center">
+    <%= image_tag @game.img_url, class: ""%>
+  </div>
+  <div class="w3-col m6">
+    <h2><%= @game.title %>(<%= @game.release_date.strftime("%Y") %>)</h2>
+    <p>Developer:<%= @game.developer %></p>
+    <p>Genre:<%= @game.genre %></p>
+    <div>
+      <% if @game.users.include? current_user %>
+      <%= link_to " Remove Game".html_safe, remove_ownership_game_path(@game), method: :delete, class: "fi-minus w3-btn" %>
+      <% else %>
+      <%= link_to " Add Game".html_safe, add_ownership_game_path(@game), method: :post, class: "fi-plus w3-btn" %>
+      <% end %>
+      <% if user_signed_in? %>
+        <%= link_to "Edit", edit_game_path(@game), class: "w3-btn"  %>
+        <%= link_to "Remove", game_path(@game),
+          method: :delete, data: {confirm: "Remove Game?"}, class: "w3-btn"   %>
+      <% end %>
+    </div>
+  </div>
+</div>
